@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guardião Digital - Portal educativo sobre Autenticação em Dois Fatores (2FA) e Criptografia. Conscientização e segurança digital para o dia a dia.">
+  <title>Guardião Digital | Segurança e Proteção de Dados</title>
+  
+  <!-- Fontes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Ícones Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Barra de Navegação Flutuante e Organizada -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="brand">
+        <div class="brand-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="brand-text">Guardião<span>Digital</span></div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-item active"><i class="fa-solid fa-house"></i> Início</a>
+        <a href="#tutoriais-2fa" class="nav-item"><i class="fa-solid fa-key"></i> 2FA</a>
+        <a href="#criptografia" class="nav-item"><i class="fa-solid fa-lock"></i> Criptografia</a>
+        <a href="#antigolpes" class="nav-item"><i class="fa-solid fa-shield-virus"></i> Antigolpes</a>
+        <a href="#checklist" class="nav-item"><i class="fa-solid fa-list-check"></i> Checklist</a>
+        
+        <!-- Aba Projeto ocultada a pedido -->
+        <!--
+        <div class="nav-dropdown" id="projectDropdown">
+          <button class="dropdown-trigger" aria-expanded="false">
+            <i class="fa-solid fa-folder-open"></i> Projeto <i class="fa-solid fa-chevron-down arrow-icon"></i>
+          </button>
+          <div class="dropdown-menu">
+            <a href="#estrutura-projeto" class="dropdown-item">
+              <i class="fa-solid fa-bullseye"></i>
+              <div>
+                <strong>Objetivo & FCS</strong>
+                <small>Metas e Fatores de Sucesso</small>
+              </div>
+            </a>
+            <a href="#estrutura-projeto" class="dropdown-item">
+              <i class="fa-solid fa-ban"></i>
+              <div>
+                <strong>Restrições</strong>
+                <small>Escopo e tecnologias</small>
+              </div>
+            </a>
+            <a href="#estrutura-projeto" class="dropdown-item">
+              <i class="fa-solid fa-sitemap"></i>
+              <div>
+                <strong>Sitemap Visual</strong>
+                <small>Arquitetura do site</small>
+              </div>
+            </a>
+            <a href="#sobre" class="dropdown-item">
+              <i class="fa-solid fa-users"></i>
+              <div>
+                <strong>Equipe FATEC</strong>
+                <small>Integrantes do projeto</small>
+              </div>
+            </a>
+          </div>
+        </div>
+        -->
+
+        <a href="#tutoriais-2fa" class="btn btn-primary btn-nav">
+          <i class="fa-solid fa-shield-check"></i> Proteger Agora
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Seção Hero (Início) -->
+  <section class="hero-section" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="badge-pill">
+          <i class="fa-solid fa-lock"></i> Segurança Digital Acessível a Todos
+        </div>
+        <h1 class="hero-title">
+          Sua vida digital protegida com <span class="highlight">2FA e Criptografia</span>
+        </h1>
+        <p class="hero-subtitle">
+          Entenda como pequenas configurações protegem seu WhatsApp, redes sociais e aplicativos bancários contra golpes, clonagens e acessos não autorizados.
+        </p>
+        <div class="hero-actions">
+          <a href="#tutoriais-2fa" class="btn btn-primary">
+            <i class="fa-solid fa-shield-check"></i> Como Proteger Minhas Contas
+          </a>
+          <a href="#simulador" class="btn btn-secondary">
+            <i class="fa-solid fa-terminal"></i> Simulador Prático
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <strong>99.9%</strong>
+            <span>dos ataques bloqueados com 2FA ativo</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <strong>100%</strong>
+            <span>Didático e Gratuito</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <strong>16 a 45+</strong>
+            <span>Linguagem simples para o dia a dia</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card-wrapper">
+        <div class="shield-card glass-panel">
+          <div class="shield-card-header">
+            <span class="status-indicator online"></span>
+            <span>Escudo de Defesa Multicamada</span>
+          </div>
+          <div class="defense-step">
+            <div class="defense-icon"><i class="fa-solid fa-user-lock"></i></div>
+            <div class="defense-info">
+              <strong>1ª Camada: Senha Segura</strong>
+              <small>Forte, exclusiva e sem dados pessoais</small>
+            </div>
+            <div class="defense-check"><i class="fa-solid fa-circle-check"></i></div>
+          </div>
+          <div class="defense-step active-glow">
+            <div class="defense-icon highlight-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <div class="defense-info">
+              <strong>2ª Camada: 2FA (Segundo Fator)</strong>
+              <small>Código dinâmico que só você possui</small>
+            </div>
+            <div class="defense-check"><i class="fa-solid fa-circle-check"></i></div>
+          </div>
+          <div class="defense-step">
+            <div class="defense-icon"><i class="fa-solid fa-file-shield"></i></div>
+            <div class="defense-info">
+              <strong>3ª Camada: Criptografia</strong>
+              <small>Dados embaralhados de ponta a ponta</small>
+            </div>
+            <div class="defense-check"><i class="fa-solid fa-circle-check"></i></div>
+          </div>
+          <div class="shield-banner">
+            <i class="fa-solid fa-circle-info"></i> Sem 2FA, basta uma senha vazada na internet para invadirem suas redes e contas.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 2FA (Autenticação em 2 Fatores) -->
+  <section class="section" id="tutoriais-2fa">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Passo a Passo</span>
+        <h2>O que é 2FA e como ativar nas suas contas</h2>
+        <p>A Autenticação em Dois Fatores adiciona uma etapa extra de confirmação na hora do login. Mesmo que criminosos adivinhem sua senha, não conseguem entrar sem o segundo código.</p>
+      </div>
+
+      <!-- Métodos de 2FA -->
+      <div class="grid-3 cards-methods">
+        <div class="method-card">
+          <div class="method-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+          <h3>Apps Autenticadores</h3>
+          <p>Geram códigos dinâmicos a cada 30 segundos (Google Authenticator, Microsoft Authenticator). É o método mais seguro e confiável.</p>
+          <span class="tag-badge recommended">Mais Recomendado</span>
+        </div>
+        <div class="method-card">
+          <div class="method-icon"><i class="fa-solid fa-comment-sms"></i></div>
+          <h3>SMS / Mensagem de Texto</h3>
+          <p>Envia um código de 6 dígitos via mensagem de celular. Melhor que ter só senha, mas vulnerável ao golpe de clonagem de chip (SIM Swap).</p>
+          <span class="tag-badge basic">Básico</span>
+        </div>
+        <div class="method-card">
+          <div class="method-icon"><i class="fa-solid fa-key"></i></div>
+          <h3>Chaves Físicas (FIDO2)</h3>
+          <p>Dispositivos de segurança parecidos com pen-drives que você conecta para autorizar o acesso. Indicado para contas bancárias e corporativas críticas.</p>
+          <span class="tag-badge advanced">Avançado</span>
+        </div>
+      </div>
+
+      <!-- Tutoriais Interativos em Abas -->
+      <div class="tutorial-box">
+        <div class="tutorial-box-header">
+          <h3 class="tutorial-box-title"><i class="fa-solid fa-list-check"></i> Escolha o serviço para ver o passo a passo:</h3>
+          <div class="tab-buttons" role="tablist">
+            <button class="tab-btn active" data-tab="whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</button>
+            <button class="tab-btn" data-tab="instagram"><i class="fa-brands fa-instagram"></i> Instagram</button>
+            <button class="tab-btn" data-tab="google"><i class="fa-brands fa-google"></i> Google / Gmail</button>
+            <button class="tab-btn" data-tab="bancos"><i class="fa-solid fa-building-columns"></i> Apps de Banco</button>
+          </div>
+        </div>
+
+        <div class="tab-content active" id="tab-whatsapp">
+          <div class="tutorial-grid">
+            <div class="step-card">
+              <span class="step-num">1</span>
+              <h4>Abra as Configurações</h4>
+              <p>Abra o WhatsApp, toque nos três pontinhos (Android) ou em <strong>Configurações</strong> (iPhone).</p>
+            </div>
+            <div class="step-card">
+              <span class="step-num">2</span>
+              <h4>Acesse Conta</h4>
+              <p>Toque na opção <strong>Conta</strong> e selecione <strong>Confirmação em duas etapas</strong>.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-num">3</span>
+              <h4>Defina seu PIN</h4>
+              <p>Toque em <strong>Ativar</strong> e digite um código de 6 dígitos que você não vá esquecer.</p>
+            </div>
+            <div class="step-card highlight-step">
+              <span class="step-num">4</span>
+              <h4>Cadastre seu E-mail</h4>
+              <p>Adicione um e-mail de recuperação para não perder sua conta caso esqueça o PIN.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-content" id="tab-instagram">
+          <div class="tutorial-grid">
+            <div class="step-card">
+              <span class="step-num">1</span>
+              <h4>Perfil e Menu</h4>
+              <p>Vá até seu perfil, clique no menu superior (três linhas) e selecione <strong>Configurações e Privacidade</strong>.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-num">2</span>
+              <h4>Central de Contas</h4>
+              <p>Toque em <strong>Central de Contas</strong> e selecione <strong>Senha e Segurança</strong>.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-num">3</span>
+              <h4>Ativar 2FA</h4>
+              <p>Selecione <strong>Autenticação de dois fatores</strong> e marque <strong>App de Autenticação</strong>.</p>
+            </div>
+            <div class="step-card highlight-step">
+              <span class="step-num">4</span>
+              <h4>Guarde os Códigos</h4>
+              <p>Anote os códigos de reserva fornecidos em um local seguro fora do celular.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-content" id="tab-google">
+          <div class="tutorial-grid">
+            <div class="step-card">
+              <span class="step-num">1</span>
+              <h4>Conta Google</h4>
+              <p>Acesse seu perfil do Gmail ou visite <em>myaccount.google.com</em> e clique em <strong>Segurança</strong>.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-num">2</span>
+              <h4>Verificação em 2 Etapas</h4>
+              <p>Localize a seção "Como você faz login no Google" e clique em <strong>Verificação em duas etapas</strong>.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-num">3</span>
+              <h4>Vincule seu Smartphone</h4>
+              <p>Defina o aviso no celular ("Sim, sou eu") ou conecte o Google Authenticator.</p>
+            </div>
+            <div class="step-card highlight-step">
+              <span class="step-num">4</span>
+              <h4>Conta Blindada</h4>
+              <p>Pronto! Ninguém acessará seu e-mail de um computador novo sem você autorizar.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-content" id="tab-bancos">
+          <div class="tutorial-grid">
+            <div class="step-card">
+              <span class="step-num">1</span>
+              <h4>Biometria Obrigatória</h4>
+              <p>Habilite o desbloqueio por FaceID ou Impressão Digital nas opções de segurança do app do banco.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-num">2</span>
+              <h4>iToken no Aparelho</h4>
+              <p>Garanta que o token do banco está autorizado exclusivamente no seu celular pessoal.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-num">3</span>
+              <h4>Limite Noturno do Pix</h4>
+              <p>Configure limite reduzido para transferências entre 20h e 06h pelo menu "Meus Limites Pix".</p>
+            </div>
+            <div class="step-card highlight-step">
+              <span class="step-num">4</span>
+              <h4>Atenção a Ligações</h4>
+              <p>O banco <strong>nunca</strong> liga pedindo para você ler QR Codes, digitar senhas ou passar códigos SMS.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Criptografia -->
+  <section class="section section-dark" id="criptografia">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Descomplicando a Tecnologia</span>
+        <h2>O que é Criptografia e onde ela protege você?</h2>
+        <p>Criptografia é a tecnologia que transforma uma mensagem legível em um código indecifrável. Apenas quem tem a "chave secreta" certa consegue ler o conteúdo original.</p>
+      </div>
+
+      <!-- Comparativo Visual -->
+      <div class="crypto-comparison">
+        <div class="crypto-box insecure">
+          <div class="crypto-badge"><i class="fa-solid fa-triangle-exclamation"></i> Sem Criptografia</div>
+          <div class="message-flow">
+            <div class="user-node"><i class="fa-solid fa-user"></i> Você</div>
+            <div class="data-pipe">
+              <span class="plain-data">"MinhaSenha@2026"</span>
+              <span class="threat"><i class="fa-solid fa-user-ninja"></i> Interceptado por invasores!</span>
+            </div>
+            <div class="dest-node"><i class="fa-solid fa-server"></i> Servidor</div>
+          </div>
+          <p class="crypto-desc">Qualquer pessoa na mesma rede Wi-Fi ou na rota de internet consegue espionar suas senhas, mensagens e fotos em texto aberto.</p>
+        </div>
+
+        <div class="crypto-box secure">
+          <div class="crypto-badge success"><i class="fa-solid fa-shield-halved"></i> Com Criptografia Ponta a Ponta</div>
+          <div class="message-flow">
+            <div class="user-node"><i class="fa-solid fa-user-shield"></i> Você</div>
+            <div class="data-pipe">
+              <span class="encrypted-data">"8f#9b@k71x&q!4"</span>
+              <span class="protected"><i class="fa-solid fa-lock"></i> Código indecifrável em trânsito</span>
+            </div>
+            <div class="dest-node"><i class="fa-solid fa-server"></i> Servidor</div>
+          </div>
+          <p class="crypto-desc">Os dados são protegidos por cálculos matemáticos complexos. Nem invasores, nem operadoras e nem provedores conseguem ler.</p>
+        </div>
+      </div>
+
+      <!-- Demonstração Interativa da Criptografia -->
+      <div class="interactive-tool glass-panel" id="simulador">
+        <div class="tool-header">
+          <h3><i class="fa-solid fa-terminal"></i> Simulador Prático: Veja a Criptografia em Ação</h3>
+          <p>Digite qualquer frase abaixo para ver como o algoritmo transforma o texto em dados cifrados:</p>
+        </div>
+        <div class="tool-body">
+          <div class="input-group">
+            <label for="plainInput">Texto Original (Legível):</label>
+            <input type="text" id="plainInput" value="Minha conta bancária está protegida!" placeholder="Digite uma frase aqui...">
+          </div>
+          <div class="cipher-actions">
+            <button class="btn btn-primary" id="btnEncrypt"><i class="fa-solid fa-lock"></i> Criptografar Texto</button>
+            <button class="btn btn-secondary" id="btnDecrypt"><i class="fa-solid fa-lock-open"></i> Decifrar com a Chave</button>
+          </div>
+          <div class="result-group">
+            <div class="output-label-row">
+              <label>Resultado Cifrado (Como viaja pela internet):</label>
+              <span class="cipher-tag" id="cipherStatus">Criptografado</span>
+            </div>
+            <div class="code-output" id="cipherOutput">P1mK#8vL9!zQ4@wT...</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Seção Guia Antigolpes -->
+  <section class="section" id="antigolpes">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Prevenção Rápida</span>
+        <h2>Golpes Mais Comuns e Como se Blindar</h2>
+        <p>A engenharia social tenta manipular sua confiança ou criar urgência para que você entregue seus códigos. Fique atento aos sinais de alerta:</p>
+      </div>
+
+      <div class="grid-3 scam-grid">
+        <div class="scam-card">
+          <div class="scam-badge"><i class="fa-solid fa-envelope-open-text"></i> Phishing</div>
+          <h3>E-mails e Mensagens Falsas</h3>
+          <p>Mensagens alarmantes de bancos, faturas atrasadas ou falsos prêmios, com links que imitam páginas verdadeiras para roubar senhas.</p>
+          <div class="tip-box">
+            <strong>Como se proteger:</strong> Nunca clique em links recebidos por SMS, e-mail ou DM. Acesse sempre digitando o endereço oficial no navegador ou pelo app.
+          </div>
+        </div>
+
+        <div class="scam-card">
+          <div class="scam-badge"><i class="fa-brands fa-whatsapp"></i> Golpe do WhatsApp</div>
+          <h3>"Me passa o código de 6 dígitos"</h3>
+          <p>Criminosos entram em contato fingindo ser de hotéis, entregas ou plataformas de vendas e pedem o código que você acabou de receber por SMS.</p>
+          <div class="tip-box">
+            <strong>Como se proteger:</strong> O código de verificação do WhatsApp é de uso estritamente pessoal. <strong>Nunca</strong> passe esse número para ninguém.
+          </div>
+        </div>
+
+        <div class="scam-card">
+          <div class="scam-badge"><i class="fa-solid fa-wifi"></i> Wi-Fi Aberto</div>
+          <h3>Redes Públicas Sem Senha</h3>
+          <p>Redes Wi-Fi gratuitas em cafeterias, shoppings ou praças podem ser configuradas por terceiros para espionar o tráfego dos aparelhos conectados.</p>
+          <div class="tip-box">
+            <strong>Como se proteger:</strong> Nunca acesse contas bancárias ou digite senhas importantes em redes abertas. Utilize seus dados móveis (4G/5G).
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Checklist Interativo de Segurança -->
+  <section class="section section-light" id="checklist">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Avaliação Rápida</span>
+        <h2>Checklist de Hábitos Digitais</h2>
+        <p>Marque os hábitos que você já pratica hoje e veja o seu nível de proteção em tempo real:</p>
+      </div>
+
+      <div class="checklist-wrapper glass-panel">
+        <div class="score-card">
+          <div class="score-circle">
+            <span class="score-number" id="scoreNumber">0%</span>
+            <span class="score-label">Protegido</span>
+          </div>
+          <div class="score-feedback" id="scoreFeedback">
+            Marque os hábitos abaixo para calcular seu índice de proteção!
+          </div>
+        </div>
+
+        <div class="checklist-items" id="checklistGroup">
+          <label class="check-item">
+            <input type="checkbox" class="chk-task" data-points="20">
+            <span class="checkmark"><i class="fa-solid fa-check"></i></span>
+            <div class="check-text">
+              <strong>Ativei o 2FA (confirmação em 2 etapas) no WhatsApp</strong>
+              <small>Impede que roubem ou clonem sua conta mesmo com a troca do chip.</small>
+            </div>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" class="chk-task" data-points="20">
+            <span class="checkmark"><i class="fa-solid fa-check"></i></span>
+            <div class="check-text">
+              <strong>Não repito a mesma senha em vários serviços</strong>
+              <small>Se um site sofrer vazamento, todas as suas outras contas continuam seguras.</small>
+            </div>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" class="chk-task" data-points="20">
+            <span class="checkmark"><i class="fa-solid fa-check"></i></span>
+            <div class="check-text">
+              <strong>Uso aplicativo autenticador no e-mail e nas principais redes sociais</strong>
+              <small>Google Authenticator ou Microsoft Authenticator (muito mais seguro que SMS).</small>
+            </div>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" class="chk-task" data-points="20">
+            <span class="checkmark"><i class="fa-solid fa-check"></i></span>
+            <div class="check-text">
+              <strong>Mantenho celular e aplicativos sempre atualizados</strong>
+              <small>Atualizações de sistema e apps fecham falhas de segurança conhecidas.</small>
+            </div>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" class="chk-task" data-points="20">
+            <span class="checkmark"><i class="fa-solid fa-check"></i></span>
+            <div class="check-text">
+              <strong>Nunca passo códigos de confirmação recebidos por SMS ou ligação</strong>
+              <small>Nenhuma empresa confiável liga pedindo códigos de verificação de login.</small>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Ficha Técnica & Estrutura do Projeto (Ocultada a pedido - mantida a equipe) -->
+  <!--
+  <section class="section section-dark" id="estrutura-projeto">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Documentação do Projeto</span>
+        <h2>Ficha Técnica e Arquitetura do Site</h2>
+        <p>Planejamento estratégico e estrutura de usabilidade desenvolvidos conforme as diretrizes acadêmicas de TI nas Organizações (FATEC).</p>
+      </div>
+
+      /* 1. Objetivo & Público-Alvo */
+      <div class="project-doc-grid">
+        <div class="doc-card glass-panel">
+          <div class="doc-card-header">
+            <div class="doc-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <h3>1. Objetivo do Site</h3>
+          </div>
+          <div class="doc-card-body">
+            <p><strong>Objetivo Geral:</strong> Promover a educação e a conscientização em segurança da informação por meio de uma plataforma acessível, intuitiva e gratuita, capacitando os usuários a protegerem suas contas e dados pessoais com <strong>2FA e Criptografia</strong>.</p>
+            <div class="target-box">
+              <i class="fa-solid fa-users"></i>
+              <div>
+                <strong>Público-Alvo:</strong> Estudantes, jovens adultos e internautas comuns (16 a 45 anos) que utilizam redes sociais, e-mails e bancos no cotidiano.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        /* 3. Restrições do Projeto */
+        <div class="doc-card glass-panel">
+          <div class="doc-card-header">
+            <div class="doc-icon"><i class="fa-solid fa-ban"></i></div>
+            <h3>2. Restrições do Projeto</h3>
+          </div>
+          <div class="doc-card-body">
+            <ul class="doc-list">
+              <li>
+                <i class="fa-brands fa-html5"></i>
+                <div>
+                  <strong>Plataforma & Tecnologias (HTML5, CSS3 e JavaScript):</strong> Desenvolvimento nativo via código (HTML/CSS), leve e autônomo, sem dependência de construtores proprietários ou backend/banco de dados complexo.
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-shield-cat"></i>
+                <div>
+                  <strong>Privacidade & LGPD:</strong> Escopo estritamente informativo; proibida a coleta ou armazenamento de senhas reais de visitantes.
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-brain"></i>
+                <div>
+                  <strong>Perfil Cognitivo:</strong> Interface simplificada para evitar sobrecarga mental em usuários com conhecimentos tecnológicos básicos.
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      /* 2. Fatores Críticos de Sucesso (FCS) */
+      <div class="fcs-section">
+        <h3 class="subsection-title"><i class="fa-solid fa-chart-line"></i> 3. Fatores Críticos de Sucesso (FCS)</h3>
+        <div class="grid-4 fcs-grid">
+          <div class="fcs-card glass-panel">
+            <div class="fcs-icon"><i class="fa-solid fa-comments"></i></div>
+            <h4>Linguagem Acessível</h4>
+            <p>Eliminação de jargões técnicos herméticos, utilizando analogias visuais simples para facilitar a compreensão imediata.</p>
+          </div>
+          <div class="fcs-card glass-panel">
+            <div class="fcs-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <h4>Usabilidade & UX</h4>
+            <p>Layout 100% responsivo (*mobile-first*), alto contraste visual, carregamento ultrarrápido e navegação fluida em até 3 cliques.</p>
+          </div>
+          <div class="fcs-card glass-panel">
+            <div class="fcs-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h4>Aplicação Imediata</h4>
+            <p>Tutoriais passo a passo práticos e diretos para serviços populares (WhatsApp, Instagram, Google e bancos).</p>
+          </div>
+          <div class="fcs-card glass-panel">
+            <div class="fcs-icon"><i class="fa-solid fa-award"></i></div>
+            <h4>Engajamento Prático</h4>
+            <p>Ferramentas interativas (Simulador de Criptografia e Checklist com pontuação) que incentivam a fixação do conteúdo.</p>
+          </div>
+        </div>
+      </div>
+
+      /* 4. Sitemap Visual Interativo */
+      <div class="sitemap-wrapper glass-panel">
+        <h3 class="subsection-title"><i class="fa-solid fa-sitemap"></i> 4. Sitemap (Arquitetura de Informação)</h3>
+        <p class="sitemap-desc">Estrutura hierárquica e navegável do site, planejada para fácil localização e retenção do usuário:</p>
+        
+        <div class="sitemap-tree">
+          <div class="sitemap-root">
+            <a href="#home" class="sitemap-node root-node">
+              <i class="fa-solid fa-house"></i> Início (Home)
+            </a>
+          </div>
+
+          <div class="sitemap-branches">
+            <div class="sitemap-branch">
+              <a href="#tutoriais-2fa" class="sitemap-node parent-node">
+                <i class="fa-solid fa-shield-halved"></i> 1. Autenticação 2FA
+              </a>
+              <ul class="sitemap-subnodes">
+                <li><a href="#tutoriais-2fa">• O que é e por que senhas não bastam</a></li>
+                <li><a href="#tutoriais-2fa">• Métodos: Apps, SMS e Chaves Físicas</a></li>
+                <li><a href="#tutoriais-2fa">• Guias: WhatsApp, Instagram, Google, Bancos</a></li>
+              </ul>
+            </div>
+
+            <div class="sitemap-branch">
+              <a href="#criptografia" class="sitemap-node parent-node">
+                <i class="fa-solid fa-lock"></i> 2. Criptografia
+              </a>
+              <ul class="sitemap-subnodes">
+                <li><a href="#criptografia">• Conceito e importância diária</a></li>
+                <li><a href="#criptografia">• Comparativo: Sem vs Com Criptografia</a></li>
+                <li><a href="#simulador">• Simulador Cifrador Interativo</a></li>
+              </ul>
+            </div>
+
+            <div class="sitemap-branch">
+              <a href="#antigolpes" class="sitemap-node parent-node">
+                <i class="fa-solid fa-triangle-exclamation"></i> 3. Guia Antigolpes & Checklist
+              </a>
+              <ul class="sitemap-subnodes">
+                <li><a href="#antigolpes">• Golpes: Phishing, WhatsApp e Wi-Fi Público</a></li>
+                <li><a href="#checklist">• Checklist Interativo de Hábitos</a></li>
+                <li><a href="#checklist">• Medidor Dinâmico de Nível de Proteção</a></li>
+              </ul>
+            </div>
+
+            <div class="sitemap-branch">
+              <a href="#estrutura-projeto" class="sitemap-node parent-node">
+                <i class="fa-solid fa-file-lines"></i> 4. Ficha Técnica & Equipe
+              </a>
+              <ul class="sitemap-subnodes">
+                <li><a href="#estrutura-projeto">• Objetivos, FCS e Restrições</a></li>
+                <li><a href="#estrutura-projeto">• Diagrama do Sitemap</a></li>
+                <li><a href="#sobre">• Equipe Acadêmica FATEC</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  -->
+
+  <!-- Seção Sobre o Projeto -->
+  <section class="section" id="sobre">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Projeto Acadêmico</span>
+        <h2>Sobre a Iniciativa</h2>
+        <p>Desenvolvido para a disciplina de <strong>Tecnologia nas Organizações</strong> — Curso de Sistemas de Informação (FATEC), com foco em promover inclusão, usabilidade e educação em segurança digital.</p>
+      </div>
+
+      <div class="team-card glass-panel">
+        <div class="team-header">
+          <i class="fa-solid fa-users"></i>
+          <h3>Equipe de Desenvolvimento</h3>
+        </div>
+        <div class="team-grid">
+          <div class="member-chip"><i class="fa-solid fa-user-graduate"></i> Allan Marcos</div>
+          <div class="member-chip"><i class="fa-solid fa-user-graduate"></i> Gustavo Ferreira da Silva</div>
+          <div class="member-chip"><i class="fa-solid fa-user-graduate"></i> Henrique Oliveira Herculano</div>
+          <div class="member-chip"><i class="fa-solid fa-user-graduate"></i> Fernanda Barbosa</div>
+          <div class="member-chip"><i class="fa-solid fa-user-graduate"></i> Marcos Antônio Sálvio Lú</div>
+          <div class="member-chip"><i class="fa-solid fa-user-graduate"></i> Nicollas de Lima</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <div class="brand-text">Guardião<span>Digital</span></div>
+        <p>Promovendo a educação e a conscientização em segurança da informação para o dia a dia.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navegação Rápida</h4>
+        <a href="#home">Início</a>
+        <a href="#tutoriais-2fa">Passo a Passo 2FA</a>
+        <a href="#criptografia">Criptografia</a>
+        <a href="#antigolpes">Guia Antigolpes</a>
+        <a href="#checklist">Checklist</a>
+        <a href="#sobre">Equipe</a>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Guardião Digital | FATEC — Tecnologia nas Organizações (Sistemas de Informação).</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
